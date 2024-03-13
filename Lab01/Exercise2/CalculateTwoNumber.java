@@ -1,4 +1,4 @@
-package Lab01;
+package Lab01.Exercise2;
 
 import javax.swing.*;
 

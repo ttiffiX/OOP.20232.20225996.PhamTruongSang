@@ -1,4 +1,4 @@
-package Lab01.solveequation;
+package Lab01.Exercise2;
 
 import javax.swing.*;
 
