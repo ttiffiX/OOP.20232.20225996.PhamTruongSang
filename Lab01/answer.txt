@@ -1,0 +1,3 @@
+6.1
+- When we choose "Cancel", the output print "You've choosen: No"
+- I can do it as I have done in "ChoosingOption.java".
