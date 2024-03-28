@@ -1,6 +1,9 @@
 package Lab02.AimsProject.src;
 
 public class DVD {
+    private static int nbDVDs = 0;
+
+    private int id;
     private String title;
     private  String category;
     private String director;
@@ -31,8 +34,15 @@ public class DVD {
         return cost;
     }
 
+    public int getId() {
+        return id;
+    }
+
     public DVD(String title) {
         this.title = title;
+
+        nbDVDs++;
+        this.id = nbDVDs;
     }
     public DVD(String title,String category,String director,int length,float cost){
         this.title = title;
@@ -40,6 +50,9 @@ public class DVD {
         this.director = director;
         this.length = length;
         this.cost = cost;
+
+        nbDVDs++;
+        this.id = nbDVDs;
     }
 
 
@@ -47,6 +60,9 @@ public class DVD {
         this.title = title;
         this.category = category;
         this.cost = cost;
+
+        nbDVDs++;
+        this.id = nbDVDs;
     }
 
     public DVD(String title, String category, String director, float cost) {
@@ -54,5 +70,8 @@ public class DVD {
         this.category = category;
         this.director = director;
         this.cost = cost;
+
+        nbDVDs++;
+        this.id = nbDVDs;
     }
 }
