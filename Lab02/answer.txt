@@ -1,3 +1,16 @@
--Exercise10:
-Java doesn't allow we to do that because the constructor is already exist, it has a same type of parameter: DVD(String).
--> Computer don't know which method need to be called.
+- Exercise10:
+1. (If you create a constructor method to build a DVD by title, then create a constructor method to build a DVD by category. Does JAVA allow you to do this?)
+
+Java doesn't allow us to do that because the constructor already exists, it has the same type of parameter: DVD(String).
+-> Computer don't know which method needs to be called.
+
+- Exercise15:
+1. (Is JAVA a Pass by Value or a Pass by Reference programming language?)
+Java is a Pass by Value programming language.
+
+2.(After the call of swap(jungleDVD, cinderellaDVD) why does the title of these two objects still remain?)
+Because 2 objects o1 and o2 are the copied of 2 DVD variable. And when we swap two objects, it only changes the name of two objects not the DVD.
+
+3.(After the call of changeTitle(jungleDVD, cinderellaDVD.getTitle()) why is the title of the JungleDVD changed?)
+Because dvd and jungleDVD reference to an object, when we use setTitle(tittle) function, it will change the title of this object, then the jungleDVD will change the title too.
+And when we make dvd to new DVD, it only changes dvd title (the copied of jungleDVD) such as the swap above.
