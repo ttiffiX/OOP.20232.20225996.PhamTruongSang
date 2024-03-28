@@ -1,0 +1,3 @@
+-Exercise10:
+Java doesn't allow we to do that because the constructor is already exist, it has a same type of parameter: DVD(String).
+-> Computer don't know which method need to be called.
