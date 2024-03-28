@@ -14,6 +14,21 @@ public class Cart {
         }
     }
 
+    public void addDVD(DVD... dvdList){
+        for (DVD dvd : dvdList)
+            addDVD(dvd);
+    }
+
+//    public void addDVD(DVD [] dvdList){
+//        for (DVD dvd : dvdList)
+//            addDVD(dvd);
+//    }
+
+    public void addDVD(DVD dvd1,DVD dvd2){
+            addDVD(dvd1);
+            addDVD(dvd2);
+    }
+
     public void removeDVD(DVD disc) {
         if (qtyOrdered == 0) System.out.println("The cart is empty.");
         else {
