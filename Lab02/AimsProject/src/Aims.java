@@ -24,5 +24,8 @@ public class Aims {
 
         anOrder.removeDVD(dvd1);
         anOrder.displayItem();
+
+        System.out.println("The ID of dvd1 is:");
+        System.out.println(dvd1.getId());
     }
 }
