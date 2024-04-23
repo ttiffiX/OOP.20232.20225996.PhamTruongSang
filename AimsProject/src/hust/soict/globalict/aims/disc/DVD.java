@@ -1,4 +1,4 @@
-package Lab02.AimsProject.src;
+package AimsProject.src.hust.soict.globalict.aims.disc;
 
 public class DVD {
     private static int nbDVDs = 0;

@@ -1,4 +1,6 @@
-package Lab02.AimsProject.src;
+package AimsProject.src.hust.soict.globalict.aims.cart;
+
+import AimsProject.src.hust.soict.globalict.aims.disc.DVD;
 
 public class Cart {
     public static final int MAX_NUMBERS_ORDERED = 20;
