@@ -1,4 +1,4 @@
-package Lab01.Exercise2;
+package OtherProjects.hust.soict.globalict.lab01.Exercise2;
 
 import javax.swing.*;
 

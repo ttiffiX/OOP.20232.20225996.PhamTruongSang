@@ -1,4 +1,4 @@
-package Lab01.Exercise6;
+package OtherProjects.hust.soict.globalict.lab01.Exercise6;
 
 import java.util.Arrays;
 import java.util.Scanner;
