@@ -74,4 +74,18 @@ public class DVD {
         nbDVDs++;
         this.id = nbDVDs;
     }
+
+    @Override
+    public String toString() {
+        return this.title + " - " + this.category + " - " +
+                this.director + " - " + this.length + "m: " +
+                this.cost + "$";
+    }
+
+    public boolean isMatch(String title){
+        if (this.title.equalsIgnoreCase(title) ) {
+            return true;
+        }
+        return false;
+    }
 }

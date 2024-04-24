@@ -1,9 +1,9 @@
-package AimsProject.src.hust.soict.globalict.aims;
+package AimsProject.src.hust.soict.globalict.test.cart;
 
 import AimsProject.src.hust.soict.globalict.aims.cart.Cart;
 import AimsProject.src.hust.soict.globalict.aims.disc.DVD;
 
-public class Aims {
+public class CartTest {
     public static void main(String[] args) {
         Cart anOrder = new Cart();
 
@@ -22,13 +22,9 @@ public class Aims {
 
         anOrder.addDVD(dvd3);
 
-        System.out.println("Total Cost is: ");
-        System.out.println(anOrder.totalCost());
-
-        anOrder.removeDVD(dvd1);
         anOrder.displayItem();
 
-        anOrder.searchDVD(2);
-        anOrder.searchDVD("tar War");
+        anOrder.searchDVD(1);
+        anOrder.searchDVD("sTAR wAR");
     }
 }
