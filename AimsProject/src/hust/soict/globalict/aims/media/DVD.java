@@ -1,17 +1,7 @@
 package AimsProject.src.hust.soict.globalict.aims.media;
 
-public class DVD extends Media{
+public class DVD extends Disc{
     private static int nbDVDs = 0;
-    private String director;
-    private int length;
-
-    public String getDirector() {
-        return director;
-    }
-
-    public int getLength() {
-        return length;
-    }
 
     public DVD(String title) {
         this.setTitle(title);
@@ -23,8 +13,8 @@ public class DVD extends Media{
     public DVD(String title, String category, String director, int length, float cost) {
         this.setTitle(title);
         this.setCategory(category);
-        this.director = director;
-        this.length = length;
+        this.setDirector(director);
+        this.setLength(length);
         this.setCost(cost);
 
         nbDVDs++;
@@ -44,7 +34,7 @@ public class DVD extends Media{
     public DVD(String title, String category, String director, float cost) {
         this.setTitle(title);
         this.setCategory(category);
-        this.director = director;
+        this.setDirector(director);
         this.setCost(cost);
 
         nbDVDs++;
@@ -54,7 +44,7 @@ public class DVD extends Media{
     @Override
     public String toString() {
         return this.getTitle() + " - " + this.getCategory() + " - " +
-                this.director + " - " + this.length + "m: " +
+                this.getDirector() + " - " + this.getLength() + "m: " +
                 this.getCost() + "$";
     }
 
@@ -65,8 +55,8 @@ public class DVD extends Media{
     public boolean isMatch(DVD disc) {
         return this.getTitle().equals(disc.getTitle()) &&
                 this.getCategory().equals(disc.getCategory()) &&
-                this.director.equals(disc.getDirector()) &&
-                this.length == disc.getLength() &&
+                this.getDirector().equals(disc.getDirector()) &&
+                this.getLength() == disc.getLength() &&
                 this.getCost() == disc.getCost();
     }
 
