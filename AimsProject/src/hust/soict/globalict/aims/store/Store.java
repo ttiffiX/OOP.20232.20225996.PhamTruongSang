@@ -6,9 +6,7 @@ import AimsProject.src.hust.soict.globalict.aims.media.Media;
 import java.util.ArrayList;
 
 public class Store{
-    public static final int MAX_NUMBERS_DVD = 100;
     private ArrayList<Media> itemInStore = new ArrayList<Media>();
-    private int qtyItem = 0;
 
     public void addMedia(Media media) {
         if (!itemInStore.contains(media)) {
