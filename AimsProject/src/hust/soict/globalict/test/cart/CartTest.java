@@ -1,7 +1,7 @@
 package AimsProject.src.hust.soict.globalict.test.cart;
 
 import AimsProject.src.hust.soict.globalict.aims.cart.Cart;
-import AimsProject.src.hust.soict.globalict.aims.disc.DVD;
+import AimsProject.src.hust.soict.globalict.aims.media.DVD;
 
 public class CartTest {
     public static void main(String[] args) {
