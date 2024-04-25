@@ -1,13 +1,11 @@
-package AimsProject.src.hust.soict.globalict.aims.compactdisc;
+package AimsProject.src.hust.soict.globalict.aims.media;
 
-import AimsProject.src.hust.soict.globalict.aims.media.Disc;
 import AimsProject.src.hust.soict.globalict.aims.play.Playable;
-import AimsProject.src.hust.soict.globalict.aims.media.Track;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class CompactDisc extends Disc implements Playable {
+public class CD extends Disc implements Playable {
     private String artist;
     private List<Track> tracks = new ArrayList<>();
     private int totalLength = 0;
@@ -23,11 +21,11 @@ public class CompactDisc extends Disc implements Playable {
         return totalLength;
     }
 
-    public CompactDisc() {
+    public CD() {
         super();
     }
 
-    public CompactDisc(String artist, List<Track> tracks) {
+    public CD(String artist, List<Track> tracks) {
         super();
         this.artist = artist;
         this.tracks = tracks;
