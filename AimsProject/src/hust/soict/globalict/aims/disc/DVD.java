@@ -5,7 +5,7 @@ public class DVD {
 
     private int id;
     private String title;
-    private  String category;
+    private String category;
     private String director;
     private int length;
     private float cost;
@@ -44,7 +44,8 @@ public class DVD {
         nbDVDs++;
         this.id = nbDVDs;
     }
-    public DVD(String title,String category,String director,int length,float cost){
+
+    public DVD(String title, String category, String director, int length, float cost) {
         this.title = title;
         this.category = category;
         this.director = director;
@@ -82,10 +83,22 @@ public class DVD {
                 this.cost + "$";
     }
 
-    public boolean isMatch(String title){
-        if (this.title.equalsIgnoreCase(title) ) {
+    public boolean isMatch(String title) {
+        if (this.title.equalsIgnoreCase(title)) {
             return true;
         }
         return false;
     }
+
+    public boolean isMatch(DVD disc) {
+        if (this.title.equals(disc.getTitle()) &&
+                this.category.equals(disc.getCategory()) &&
+                this.director.equals(disc.getDirector()) &&
+                this.length == disc.getLength() &&
+                this.cost == disc.getCost()) {
+            return true;
+        }
+        return false;
+    }
+
 }

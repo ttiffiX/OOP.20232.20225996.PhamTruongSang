@@ -43,10 +43,11 @@ public class Cart {
                         i++;
                     }
                     qtyOrdered--;
-                    break;
+                    System.out.println("The disc " + disc.getTitle() + " has been removed.");
+                    return;
                 }
             }
-            System.out.println("The disc " + disc.getTitle() + " has been removed.");
+            System.out.println("Nothing to remove.");
         }
     }
 
