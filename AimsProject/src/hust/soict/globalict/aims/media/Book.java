@@ -3,11 +3,7 @@ package AimsProject.src.hust.soict.globalict.aims.media;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Book extends java.lang.Object {
-    private int id;
-    private String title;
-    private String category;
-    private float cost;
+public class Book extends Media{
     private List<String> authors = new ArrayList<>();
 
     public Book() {
@@ -15,10 +11,9 @@ public class Book extends java.lang.Object {
     }
 
     public Book(int id, String title, String category, float cost, List<String> authors) {
-        this.id = id;
-        this.title = title;
-        this.category = category;
-        this.cost = cost;
+        this.setId(id);
+        this.setCategory(category);
+        this.setCost(cost);
         this.authors = authors;
     }
 

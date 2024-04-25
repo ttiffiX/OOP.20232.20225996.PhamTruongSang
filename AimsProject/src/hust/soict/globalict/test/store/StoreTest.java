@@ -1,7 +1,6 @@
 package AimsProject.src.hust.soict.globalict.test.store;
 
-import AimsProject.src.hust.soict.globalict.aims.cart.Cart;
-import AimsProject.src.hust.soict.globalict.aims.disc.DVD;
+import AimsProject.src.hust.soict.globalict.aims.media.DVD;
 import AimsProject.src.hust.soict.globalict.aims.store.Store;
 
 public class StoreTest {

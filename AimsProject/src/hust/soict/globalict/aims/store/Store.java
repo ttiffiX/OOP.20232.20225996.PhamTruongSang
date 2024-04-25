@@ -1,6 +1,6 @@
 package AimsProject.src.hust.soict.globalict.aims.store;
 
-import AimsProject.src.hust.soict.globalict.aims.disc.DVD;
+import AimsProject.src.hust.soict.globalict.aims.media.DVD;
 
 public class Store{
     public static final int MAX_NUMBERS_DVD = 100;
