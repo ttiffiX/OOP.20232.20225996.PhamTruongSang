@@ -10,21 +10,19 @@ public class CartTest {
         DVD dvd1 = new DVD("The Lion King", "Animation",
                 "Roger Allers", 87, 19.95f);
 
-        anOrder.addDVD(dvd1);
+        anOrder.addMedia(dvd1);
 
         DVD dvd2 = new DVD("Star War", "Science Fiction",
                 "George Lucas", 87, 24.95f);
 
-        anOrder.addDVD(dvd2);
+        anOrder.addMedia(dvd2);
 
         DVD dvd3 = new DVD("Aladin", "Animation",
                 18.99f);
 
-        anOrder.addDVD(dvd3);
+        anOrder.addMedia(dvd3);
 
         anOrder.displayItem();
 
-        anOrder.searchDVD(1);
-        anOrder.searchDVD("sTAR wAR");
     }
 }
