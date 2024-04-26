@@ -48,9 +48,12 @@ public class CD extends Disc implements Playable {
 
     @Override
     public void play() {
-        for (Track track : tracks){
-            System.out.println("Playing Track: "+  track.getTitle());
-            System.out.println("Track length: "+ track.getLength());
+        if (tracks.isEmpty()) {
+            System.out.println("This track can't be played.");
+        } else {
+            for (Track track : tracks) {
+                track.play();
+            }
         }
     }
 }

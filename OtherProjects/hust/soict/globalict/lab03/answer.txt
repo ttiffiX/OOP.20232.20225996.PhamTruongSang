@@ -4,5 +4,5 @@
 
     Answer:
 
-    - Cart is aggregate of Media. Store is aggregate of Media. CompactDisc is aggregate of Track.
+    - Cart is aggregate of Media. Store is aggregate of Media. CompactDisc is aggregated of Track.
     - Implemented in code.
