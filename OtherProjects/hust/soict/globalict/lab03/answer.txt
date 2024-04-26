@@ -1,0 +1,8 @@
+14. Question:
+    - Which classes are aggregates of other classes? Checking all constructors of whole classes if they initialize for their parts?
+    - Write constructors for parent and child classes. Remove redundant setter methods if any.
+
+    Answer:
+
+    - Cart is aggregate of Media. Store is aggregate of Media. CompactDisc is aggregate of Track.
+    - Implemented in code.
