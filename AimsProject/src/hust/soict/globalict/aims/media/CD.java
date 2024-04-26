@@ -25,10 +25,17 @@ public class CD extends Disc implements Playable {
         super();
     }
 
-    public CD(String artist, List<Track> tracks) {
-        super();
+    public CD(int id, String title) {
+        super(id, title);
+    }
+
+    public CD(int id, String title, String category, String artist, float cost) {
+        super(id, title, category, cost);
         this.artist = artist;
-        this.tracks = tracks;
+    }
+
+    public CD(int id, String title, String category, float cost) {
+        super(id, title, category, cost);
     }
 
     public void addTrack(Track track) {
@@ -38,7 +45,7 @@ public class CD extends Disc implements Playable {
         } else System.out.println("The track is already exist.");
     }
 
-    public void removeAuthor(Track track) {
+    public void removeTrack(Track track) {
         if (tracks.contains(track)) {
             tracks.remove(track);
             System.out.println("The track has been removed.");
@@ -55,5 +62,11 @@ public class CD extends Disc implements Playable {
                 track.play();
             }
         }
+    }
+
+    public String toString() {
+        return "CD - " + this.getTitle() + " - " + this.getCategory() + " - " +
+                this.getArtist() + " - " + this.getLength() + " - " + this.getCost() + "$ "
+                + "(Track list: " + this.tracks + ")";
     }
 }

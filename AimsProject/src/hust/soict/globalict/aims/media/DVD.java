@@ -3,49 +3,25 @@ package AimsProject.src.hust.soict.globalict.aims.media;
 import AimsProject.src.hust.soict.globalict.aims.play.Playable;
 
 public class DVD extends Disc implements Playable {
-    private static int nbDVDs = 0;
-
-    public DVD(String title) {
-        this.setTitle(title);
-
-        nbDVDs++;
-        this.setId(nbDVDs);
+    public DVD(int id, String title) {
+        super(id, title);
     }
 
-    public DVD(String title, String category, String director, int length, float cost) {
-        this.setTitle(title);
-        this.setCategory(category);
-        this.setDirector(director);
-        this.setLength(length);
-        this.setCost(cost);
-
-        nbDVDs++;
-        this.setId(nbDVDs);
+    public DVD(int id, String title, String category, float cost) {
+        super(id, title, category, cost);
     }
 
-
-    public DVD(String title, String category, float cost) {
-        this.setTitle(title);
-        this.setCategory(category);
-        this.setCost(cost);
-
-        nbDVDs++;
-        this.setId(nbDVDs);
+    public DVD(int id, String title, String category, String director, float cost) {
+        super(id, title, category, director, cost);
     }
 
-    public DVD(String title, String category, String director, float cost) {
-        this.setTitle(title);
-        this.setCategory(category);
-        this.setDirector(director);
-        this.setCost(cost);
-
-        nbDVDs++;
-        this.setId(nbDVDs);
+    public DVD(int id, String title, String category, String director, int length, float cost) {
+        super(id, title, category, director, length, cost);
     }
 
     @Override
     public String toString() {
-        return this.getTitle() + " - " + this.getCategory() + " - " +
+        return "DVD - " + this.getId() + " - " + this.getTitle() + " - " + this.getCategory() + " - " +
                 this.getDirector() + " - " + this.getLength() + "m: " +
                 this.getCost() + "$";
     }

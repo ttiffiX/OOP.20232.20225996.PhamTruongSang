@@ -6,8 +6,8 @@ public class TestPassingParameter {
     public static void main(String[] args) {
 
         // TODO Auto-generated method stub
-        DVD jungleDVD = new DVD("Jungle");
-        DVD cinderellaDVD = new DVD("Cinderella");
+        DVD jungleDVD = new DVD(1,"Jungle");
+        DVD cinderellaDVD = new DVD(2,"Cinderella");
 
         swap(jungleDVD, cinderellaDVD);
         System.out.println("jungle dvd title: " + jungleDVD.getTitle());
