@@ -1,6 +1,14 @@
 package AimsProject.src.hust.soict.globalict.aims.media;
 
+import AimsProject.src.hust.soict.globalict.aims.media.comparator.MediaComparatorByCostTitle;
+import AimsProject.src.hust.soict.globalict.aims.media.comparator.MediaComparatorByTitleCost;
+
+import java.util.Comparator;
+
 public class Media extends java.lang.Object {
+
+    public static final Comparator<Media> COMPARE_BY_TITLE_COST = new MediaComparatorByTitleCost();
+    public static final Comparator<Media> COMPARE_BY_COST_TITLE = new MediaComparatorByCostTitle();
     private int id;
     private String title;
     private String category;
