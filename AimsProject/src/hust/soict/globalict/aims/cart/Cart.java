@@ -4,6 +4,8 @@ import AimsProject.src.hust.soict.globalict.aims.media.DVD;
 import AimsProject.src.hust.soict.globalict.aims.media.Media;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 public class Cart {
@@ -84,6 +86,14 @@ public class Cart {
             }
             System.out.println("No Result.");
         }
+    }
+
+    public void sortByCost(){
+        Collections.sort(itemsOrdered, Media.COMPARE_BY_COST_TITLE);
+    }
+
+    public void sortByTitle(){
+        Collections.sort(itemsOrdered, Media.COMPARE_BY_TITLE_COST);
     }
 
 }
