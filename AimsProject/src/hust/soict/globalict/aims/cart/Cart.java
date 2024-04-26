@@ -7,9 +7,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Cart {
+    public static int MAX_NUMBERS_ORDERED = 20;
     private ArrayList<Media> itemsOrdered = new ArrayList<Media>();
 
     public void addMedia(Media media) {
+        if (itemsOrdered.size() >= MAX_NUMBERS_ORDERED) {
+            System.out.println("The Cart is already full.");
+            return;
+        }
         if (!itemsOrdered.contains(media)) {
             itemsOrdered.add(media);
             System.out.println("The media has been added.");
@@ -54,31 +59,31 @@ public class Cart {
         }
     }
 
-//    public void searchDVD(int id) {
-//        if (itemsOrdered.isEmpty()) System.out.println("The cart is empty.");
-//        else {
-//            for (Media media : itemsOrdered){
-//                if (media.getId() == id) {
-//                    System.out.println("Result for media have id '" + id + "' is: " +
-//                            media.toString());
-//                    return;
-//                }
-//            }
-//            System.out.println("No result for media have id '" + id + "'.");
-//        }
-//    }
-//
-//    public void searchDVD(String title) {
-//        if (itemsOrdered.isEmpty()) System.out.println("The cart is empty.");
-//        else {
-//            for (Media media : itemsOrdered){
-//                if (media.isMatch(title)) {
-//                    System.out.println("Result: " + itemOrdered[i].toString());
-//                    return;
-//                }
-//            }
-//            System.out.println("No Result.");
-//        }
-//    }
+    public void searchMedia(int id) {
+        if (itemsOrdered.isEmpty()) System.out.println("The cart is empty.");
+        else {
+            for (Media media : itemsOrdered){
+                if (media.getId() == id) {
+                    System.out.println("Result for media have id '" + id + "' is: " +
+                            media.toString());
+                    return;
+                }
+            }
+            System.out.println("No result for media have id '" + id + "'.");
+        }
+    }
+
+    public void searchMedia(String title) {
+        if (itemsOrdered.isEmpty()) System.out.println("The cart is empty.");
+        else {
+            for (Media media : itemsOrdered){
+                if (media.isMatch(title)) {
+                    System.out.println("Result: " + media.toString());
+                    return;
+                }
+            }
+            System.out.println("No Result.");
+        }
+    }
 
 }

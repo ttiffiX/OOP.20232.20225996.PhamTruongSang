@@ -50,10 +50,6 @@ public class DVD extends Disc implements Playable {
                 this.getCost() + "$";
     }
 
-    public boolean isMatch(String title) {
-        return this.getTitle().equalsIgnoreCase(title);
-    }
-
     public boolean isMatch(DVD disc) {
         return this.getTitle().equals(disc.getTitle()) &&
                 this.getCategory().equals(disc.getCategory()) &&

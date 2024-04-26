@@ -32,4 +32,15 @@ public class Track implements Playable {
             System.out.println("This track can't be played");
         }
     }
+
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        Track obj = (Track) o;
+        if (!title.equals(obj.title)) {
+            return false;
+        }
+        return length == obj.getLength();
+    }
 }

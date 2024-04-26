@@ -1,6 +1,6 @@
 package AimsProject.src.hust.soict.globalict.aims.media;
 
-public class Media extends java.lang.Object{
+public class Media extends java.lang.Object {
     private int id;
     private String title;
     private String category;
@@ -40,5 +40,16 @@ public class Media extends java.lang.Object{
 
     public Media() {
         super();
+    }
+
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        return title.equals(((Media) o).title);
+    }
+
+    public boolean isMatch(String title) {
+        return this.getTitle().equalsIgnoreCase(title);
     }
 }

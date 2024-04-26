@@ -21,8 +21,12 @@ public class CartTest {
                 18.99f);
 
         anOrder.addMedia(dvd3);
+        anOrder.removeMedia(dvd1);
 
         anOrder.displayItem();
+
+        anOrder.searchMedia(1);
+        anOrder.searchMedia("star war");
 
     }
 }
