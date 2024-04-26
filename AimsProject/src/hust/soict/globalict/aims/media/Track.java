@@ -43,4 +43,8 @@ public class Track implements Playable {
         }
         return length == obj.getLength();
     }
+
+    public String toString() {
+        return this.getTitle() + " - " + this.getLength();
+    }
 }
