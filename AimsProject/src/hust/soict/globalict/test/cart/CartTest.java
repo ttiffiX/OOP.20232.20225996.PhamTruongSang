@@ -39,8 +39,8 @@ public class CartTest {
         anOrder.addMedia(cd1);
         anOrder.displayItem();
 
-        anOrder.searchMedia(1);
-        anOrder.searchMedia("star war");
+//        anOrder.searchMedia(1);
+//        anOrder.searchMedia("star war");
         System.out.println();
 
         anOrder.sortByCost();

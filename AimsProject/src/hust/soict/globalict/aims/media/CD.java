@@ -41,7 +41,6 @@ public class CD extends Disc implements Playable {
     public void addTrack(Track track) {
         if (!tracks.contains(track)) {
             tracks.add(track);
-            System.out.println("The track has been added.");
         } else System.out.println("The track is already exist.");
     }
 
@@ -65,7 +64,7 @@ public class CD extends Disc implements Playable {
     }
 
     public String toString() {
-        return "CD - " + this.getTitle() + " - " + this.getCategory() + " - " +
+        return "CD - " + this.getId() + " - " + this.getTitle() + " - " + this.getCategory() + " - " +
                 this.getArtist() + " - " + this.getLength() + " - " + this.getCost() + "$ "
                 + "(Track list: " + this.tracks + ")";
     }

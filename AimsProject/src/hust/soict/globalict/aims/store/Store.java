@@ -5,14 +5,13 @@ import AimsProject.src.hust.soict.globalict.aims.media.Media;
 
 import java.util.ArrayList;
 
-public class Store{
+public class Store {
     private ArrayList<Media> itemInStore = new ArrayList<Media>();
 
     public void addMedia(Media media) {
         if (!itemInStore.contains(media)) {
             itemInStore.add(media);
-            System.out.println("The media has been added.");
-        }else System.out.println("The media is already exist.");
+        } else System.out.println("The media is already exist.");
     }
 
     public void removeMedia(Media media) {
@@ -27,5 +26,23 @@ public class Store{
             }
             System.out.println("The media does not exist.");
         }
+    }
+
+    public void displayStore() {
+        System.out.println("******************************Store******************************");
+        System.out.println("Items in store:");
+        for (Media item : itemInStore) {
+            System.out.println(item.toString());
+        }
+        System.out.println("*****************************************************************");
+    }
+
+    public Media searchStore(String title) {
+        for (Media item : itemInStore) {
+            if (item.isMatch(title)) {
+                return item;
+            }
+        }
+        return null;
     }
 }

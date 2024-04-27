@@ -26,7 +26,6 @@ public class Book extends Media {
     public void addAuthor(String authorName) {
         if (!authors.contains(authorName)) {
             authors.add(authorName);
-            System.out.println("Add author complete.");
         } else System.out.println("The author is already exist.");
     }
 
