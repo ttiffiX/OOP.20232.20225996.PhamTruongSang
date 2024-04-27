@@ -19,7 +19,6 @@ public class Cart {
         }
         if (!itemsOrdered.contains(media)) {
             itemsOrdered.add(media);
-            System.out.println("The media has been added.");
         }else System.out.println("The media is already exist.");
     }
 
@@ -46,8 +45,6 @@ public class Cart {
     }
 
     public void displayItem() {
-        if (itemsOrdered.isEmpty()) System.out.println("The cart is empty.");
-        else {
             int i = 0;
             System.out.println("******************************Cart******************************\nOrdered Items:");
             for (Media media : itemsOrdered){
@@ -56,36 +53,24 @@ public class Cart {
             }
             System.out.printf("%-10s %.2f$\n", "Total Cost", totalCost());
             System.out.println("****************************************************************");
-
-
-        }
     }
 
-    public void searchMedia(int id) {
-        if (itemsOrdered.isEmpty()) System.out.println("The cart is empty.");
-        else {
-            for (Media media : itemsOrdered){
-                if (media.getId() == id) {
-                    System.out.println("Result for media have id '" + id + "' is: " +
-                            media.toString());
-                    return;
-                }
+    public Media searchCart(String title) {
+        for (Media item : itemsOrdered) {
+            if (item.isMatch(title)) {
+                return item;
             }
-            System.out.println("No result for media have id '" + id + "'.");
         }
+        return null;
     }
 
-    public void searchMedia(String title) {
-        if (itemsOrdered.isEmpty()) System.out.println("The cart is empty.");
-        else {
-            for (Media media : itemsOrdered){
-                if (media.isMatch(title)) {
-                    System.out.println("Result: " + media.toString());
-                    return;
-                }
+    public Media searchCart(int id) {
+        for (Media item : itemsOrdered) {
+            if (item.getId() == id) {
+                return item;
             }
-            System.out.println("No Result.");
         }
+        return null;
     }
 
     public void sortByCost(){
@@ -94,6 +79,10 @@ public class Cart {
 
     public void sortByTitle(){
         Collections.sort(itemsOrdered, Media.COMPARE_BY_TITLE_COST);
+    }
+
+    public int sizeCart() {
+        return itemsOrdered.size();
     }
 
 }
