@@ -21,6 +21,10 @@ public class CD extends Disc implements Playable {
         return totalLength;
     }
 
+    public List<Track> getTracks() {
+        return tracks;
+    }
+
     public CD() {
         super();
     }
