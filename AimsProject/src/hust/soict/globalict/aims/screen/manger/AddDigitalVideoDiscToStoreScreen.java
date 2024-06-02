@@ -63,36 +63,22 @@ public class AddDigitalVideoDiscToStoreScreen extends AddItemToStoreScreen {
             int length = 0;
             float cost = 0;
             for (JTextField tf : textList) {
+                if (tf.getText().isEmpty()) {
+                    JOptionPane.showMessageDialog(null, "Invalid Input", "Alert", JOptionPane.WARNING_MESSAGE);
+                    return;
+                }
                 if (tf.getName().equals("ID")) {
-                    if (tf.getText().isEmpty()) {
-                        JOptionPane.showMessageDialog(null, "Invalid Input", "Alert", JOptionPane.WARNING_MESSAGE);
-                        return;
-                    } else id = Integer.parseInt(tf.getText());
+                    id = Integer.parseInt(tf.getText());
                 } else if (tf.getName().equals("Title")) {
-                    if (tf.getText().isEmpty()) {
-                        JOptionPane.showMessageDialog(null, "Invalid Input", "Alert", JOptionPane.WARNING_MESSAGE);
-                        return;
-                    } else title = tf.getText();
+                    title = tf.getText();
                 } else if (tf.getName().equals("Category")) {
-                    if (tf.getText().isEmpty()) {
-                        JOptionPane.showMessageDialog(null, "Invalid Input", "Alert", JOptionPane.WARNING_MESSAGE);
-                        return;
-                    } else category = tf.getText();
+                    category = tf.getText();
                 } else if (tf.getName().equals("Director")) {
-                    if (tf.getText().isEmpty()) {
-                        JOptionPane.showMessageDialog(null, "Invalid Input", "Alert", JOptionPane.WARNING_MESSAGE);
-                        return;
-                    } else director = tf.getText();
+                    director = tf.getText();
                 } else if (tf.getName().equals("Length")) {
-                    if (tf.getText().isEmpty()) {
-                        JOptionPane.showMessageDialog(null, "Invalid Input", "Alert", JOptionPane.WARNING_MESSAGE);
-                        return;
-                    } else length = Integer.parseInt(tf.getText());
+                    length = Integer.parseInt(tf.getText());
                 } else if (tf.getName().equals("Cost")) {
-                    if (tf.getText().isEmpty()) {
-                        JOptionPane.showMessageDialog(null, "Invalid Input", "Alert", JOptionPane.WARNING_MESSAGE);
-                        return;
-                    } else cost = Float.parseFloat(tf.getText());
+                    cost = Float.parseFloat(tf.getText());
                 }
             }
 

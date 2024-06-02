@@ -55,31 +55,20 @@ public class AddBookToStoreScreen extends AddItemToStoreScreen {
             String author = null;
             float cost = 0f;
             for (JTextField tf : textList) {
+                if (tf.getText().isEmpty()) {
+                    JOptionPane.showMessageDialog(null, "Invalid Input", "Alert", JOptionPane.WARNING_MESSAGE);
+                    return;
+                }
                 if (tf.getName().equals("ID")) {
-                    if (tf.getText().isEmpty()) {
-                        JOptionPane.showMessageDialog(null, "Invalid Input", "Alert", JOptionPane.WARNING_MESSAGE);
-                        return;
-                    } else id = Integer.parseInt(tf.getText());
+                    id = Integer.parseInt(tf.getText());
                 } else if (tf.getName().equals("Title")) {
-                    if (tf.getText().isEmpty()) {
-                        JOptionPane.showMessageDialog(null, "Invalid Input", "Alert", JOptionPane.WARNING_MESSAGE);
-                        return;
-                    } else title = tf.getText();
+                    title = tf.getText();
                 } else if (tf.getName().equals("Category")) {
-                    if (tf.getText().isEmpty()) {
-                        JOptionPane.showMessageDialog(null, "Invalid Input", "Alert", JOptionPane.WARNING_MESSAGE);
-                        return;
-                    } else category = tf.getText();
+                    category = tf.getText();
                 } else if (tf.getName().equals("Cost")) {
-                    if (tf.getText().isEmpty()) {
-                        JOptionPane.showMessageDialog(null, "Invalid Input", "Alert", JOptionPane.WARNING_MESSAGE);
-                        return;
-                    } else cost = Float.parseFloat(tf.getText());
+                    cost = Float.parseFloat(tf.getText());
                 } else if (tf.getText().equals("Author")) {
-                    if (tf.getText().isEmpty()) {
-                        JOptionPane.showMessageDialog(null, "Invalid Input", "Alert", JOptionPane.WARNING_MESSAGE);
-                        return;
-                    } else author = tf.getText();
+                    author = tf.getText();
                 }
             }
 
@@ -102,6 +91,7 @@ public class AddBookToStoreScreen extends AddItemToStoreScreen {
                 JOptionPane.showMessageDialog(null, "The Book is already exist!", "Alert", JOptionPane.WARNING_MESSAGE);
         }
     }
+
     private class btnMenuListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {

@@ -6,7 +6,7 @@ import java.nio.file.Paths;
 
 public class GarbageCreator {
     public static void main(String[] args) throws IOException {
-        String filename = "OtherProjects\\hust\\soict\\globalict\\lab03\\garbage\\text.exe";
+        String filename = "OtherProjects\\GUIProject.hust\\GUIProject.hust.soict\\GUIProject.hust.soict.globalict\\lab03\\garbage\\text.exe";
         byte[] inputBytes = {0};
         long startTime, endTIme;
 

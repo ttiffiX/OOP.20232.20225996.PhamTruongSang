@@ -65,41 +65,24 @@ public class AddCompactDiscToStoreScreen extends AddItemToStoreScreen {
             int lengthTrack = 0;
             float cost = 0;
             for (JTextField tf : textList) {
+                if (tf.getText().isEmpty()) {
+                    JOptionPane.showMessageDialog(null, "Invalid Input", "Alert", JOptionPane.WARNING_MESSAGE);
+                    return;
+                }
                 if (tf.getName().equals("ID")) {
-                    if (tf.getText().isEmpty()) {
-                        JOptionPane.showMessageDialog(null, "Invalid Input", "Alert", JOptionPane.WARNING_MESSAGE);
-                        return;
-                    } else id = Integer.parseInt(tf.getText());
+                    id = Integer.parseInt(tf.getText());
                 } else if (tf.getName().equals("Title")) {
-                    if (tf.getText().isEmpty()) {
-                        JOptionPane.showMessageDialog(null, "Invalid Input", "Alert", JOptionPane.WARNING_MESSAGE);
-                        return;
-                    } else title = tf.getText();
+                    title = tf.getText();
                 } else if (tf.getName().equals("Category")) {
-                    if (tf.getText().isEmpty()) {
-                        JOptionPane.showMessageDialog(null, "Invalid Input", "Alert", JOptionPane.WARNING_MESSAGE);
-                        return;
-                    } else category = tf.getText();
+                    category = tf.getText();
                 } else if (tf.getName().equals("Cost")) {
-                    if (tf.getText().isEmpty()) {
-                        JOptionPane.showMessageDialog(null, "Invalid Input", "Alert", JOptionPane.WARNING_MESSAGE);
-                        return;
-                    } else cost = Float.parseFloat(tf.getText());
+                    cost = Float.parseFloat(tf.getText());
                 } else if (tf.getName().equals("Artist")) {
-                    if (tf.getText().isEmpty()) {
-                        JOptionPane.showMessageDialog(null, "Invalid Input", "Alert", JOptionPane.WARNING_MESSAGE);
-                        return;
-                    } else artist = tf.getText();
+                    artist = tf.getText();
                 } else if (tf.getName().equals("Title of Track")) {
-                    if (tf.getText().isEmpty()) {
-                        JOptionPane.showMessageDialog(null, "Invalid Input", "Alert", JOptionPane.WARNING_MESSAGE);
-                        return;
-                    } else titleTrack = tf.getText();
+                    titleTrack = tf.getText();
                 } else if (tf.getName().equals("Length of Track")) {
-                    if (tf.getText().isEmpty()) {
-                        JOptionPane.showMessageDialog(null, "Invalid Input", "Alert", JOptionPane.WARNING_MESSAGE);
-                        return;
-                    } else lengthTrack = Integer.parseInt(tf.getText());
+                    lengthTrack = Integer.parseInt(tf.getText());
                 }
             }
 
@@ -123,6 +106,7 @@ public class AddCompactDiscToStoreScreen extends AddItemToStoreScreen {
                 JOptionPane.showMessageDialog(null, "The CD is already exist!", "Alert", JOptionPane.WARNING_MESSAGE);
         }
     }
+
     private class btnMenuListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {

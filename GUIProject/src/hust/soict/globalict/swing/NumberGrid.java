@@ -1,4 +1,4 @@
-package AimsProject.src.hust.soict.globalict.swing;
+package GUIProject.src.hust.soict.globalict.swing;
 
 import javax.swing.*;
 import java.awt.*;
