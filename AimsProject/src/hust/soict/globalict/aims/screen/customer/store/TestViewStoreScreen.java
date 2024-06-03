@@ -18,11 +18,9 @@ import java.util.ArrayList;
 public class TestViewStoreScreen extends Application {
     private static Store store;
 
-    private static Cart cart;
-
     @Override
     public void start(Stage primaryStage) throws Exception {
-        final String STORE_FXML_FILE_PATH = "AimsProject/src/hust/soict/globalict/aims/screen/customer/view/Store.fxml";
+        final String STORE_FXML_FILE_PATH = "/hust/soict/globalict/aims/screen/customer/view/Store.fxml";
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(STORE_FXML_FILE_PATH));
         ViewStoreController viewStoreController = new ViewStoreController(store);
         fxmlLoader.setController(viewStoreController);
@@ -43,7 +41,7 @@ public class TestViewStoreScreen extends Application {
         Book book1 = new Book(4, "Sherlock Holmes", "Detective", 100.0f, authors);
         CD cd1 = new CD(5, "Story of my life", "Something", "Me", 200f);
         Track track1 = new Track("Baby Blue", 100);
-        Track track2 = new Track("Free Bird",0);
+        Track track2 = new Track("Free Bird", 0);
         cd1.addTrack(track1);
         cd1.addTrack(track2);
         store.addMedia(dvd1);

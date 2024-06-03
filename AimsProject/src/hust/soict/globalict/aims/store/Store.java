@@ -8,6 +8,10 @@ import java.util.ArrayList;
 public class Store {
     private ArrayList<Media> itemInStore = new ArrayList<Media>();
 
+    public Store() {
+
+    }
+
 
     public ArrayList<Media> getItemsInStore() {
         return itemInStore;

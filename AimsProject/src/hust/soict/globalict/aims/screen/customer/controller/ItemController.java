@@ -31,12 +31,20 @@ public class ItemController {
 
     @FXML
     void btnAddToCartClicked(ActionEvent event) {
-
+        Button btnClicked = (Button) event.getSource();
+        if (btnClicked.getId().equals("btnAddToCart")) {
+            cart.addMedia(media);
+        }
     }
 
     @FXML
     void btnPlayClicked(ActionEvent event) {
-
+        Button btnClicked = (Button) event.getSource();
+        if (btnClicked.getId().equals("btnPlay")) {
+            if (media instanceof Playable) {
+                ((Playable) media).play();
+            }
+        }
     }
 
     public void setData(Media media) {

@@ -3,15 +3,24 @@ package AimsProject.src.hust.soict.globalict.aims.screen.customer.controller;
 import AimsProject.src.hust.soict.globalict.aims.cart.Cart;
 import AimsProject.src.hust.soict.globalict.aims.media.Media;
 import AimsProject.src.hust.soict.globalict.aims.play.Playable;
+import AimsProject.src.hust.soict.globalict.aims.store.Store;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
+
+import java.io.IOException;
 
 public class CartController {
-    private final Cart cart;
+    private  Cart cart;
+    private  Store store;
 
     @FXML
     private Button btnPlay;
@@ -37,14 +46,9 @@ public class CartController {
 
     @FXML
     private TableView<Media> tblMedia;
-    @FXML
-    private TextField tfFilter;
-    @FXML
-    private RadioButton radioBtnFilterId;
-    @FXML
-    private RadioButton radioBtnFilterTitle;
 
-    public CartController(Cart cart) {
+    public CartController(Store store, Cart cart) {
+        this.store = store;
         this.cart = cart;
     }
 
@@ -74,15 +78,18 @@ public class CartController {
             btnRemove.setVisible(false);
         } else {
             btnRemove.setVisible(true);
-            if (media instanceof Playable) {
-                btnPlay.setVisible(true);
-            } else btnPlay.setVisible(false);
+            btnPlay.setVisible(media instanceof Playable);
         }
     }
 
     @FXML
     void btnPlayPressed(ActionEvent event) {
-
+        Button clickedButton = (Button) event.getSource();
+        if (clickedButton.getId().equals("btnPlay")) {
+            if (tblMedia.getSelectionModel().getSelectedItem() instanceof Playable) {
+                ((Playable) tblMedia.getSelectionModel().getSelectedItem()).play();
+            }
+        }
     }
 
     @FXML
@@ -93,14 +100,24 @@ public class CartController {
 
     @FXML
     void btnViewStorePressed(ActionEvent event) {
-
+        try {
+            final String CART_FXML_FILE_PATH = "../view/Store.fxml";
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(CART_FXML_FILE_PATH));
+            fxmlLoader.setController(new ViewStoreController(store, cart));
+            Parent root = fxmlLoader.load();
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(new Scene(root));
+            stage.setTitle("Cart");
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML
-    void placeOrderClicked(ActionEvent event) {
+    void btnPlaceOrderClicked(ActionEvent event) {
 
     }
-
 
 
 }
