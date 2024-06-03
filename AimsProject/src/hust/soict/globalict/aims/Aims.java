@@ -1,9 +1,11 @@
 package AimsProject.src.hust.soict.globalict.aims;
 
 import AimsProject.src.hust.soict.globalict.aims.cart.Cart;
+import AimsProject.src.hust.soict.globalict.aims.exception.PlayerException;
 import AimsProject.src.hust.soict.globalict.aims.media.*;
 import AimsProject.src.hust.soict.globalict.aims.store.Store;
 
+import javax.naming.LimitExceededException;
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
@@ -18,7 +20,7 @@ public class Aims {
         Book book1 = new Book(4, "Sherlock Holmes", "Detective", 100.0f, authors);
         CD cd1 = new CD(5, "Story of my life", "Something", "Me", 200f);
         Track track1 = new Track("Baby Blue", 100);
-        Track track2 = new Track("Free Bird", 100);
+        Track track2 = new Track("Free Bird", 0);
         cd1.addTrack(track1);
         cd1.addTrack(track2);
         store.addMedia(dvd1);
@@ -95,7 +97,7 @@ public class Aims {
         System.out.print("Please choose a number: 0-1-2-3-4-5: ");
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws LimitExceededException, PlayerException {
         Store store = new Store();
         Cart cart = new Cart();
         Random random = new Random();

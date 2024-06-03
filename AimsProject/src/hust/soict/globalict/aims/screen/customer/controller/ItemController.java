@@ -1,6 +1,7 @@
 package AimsProject.src.hust.soict.globalict.aims.screen.customer.controller;
 
 import AimsProject.src.hust.soict.globalict.aims.cart.Cart;
+import AimsProject.src.hust.soict.globalict.aims.exception.PlayerException;
 import AimsProject.src.hust.soict.globalict.aims.media.Media;
 import AimsProject.src.hust.soict.globalict.aims.play.Playable;
 import javafx.event.ActionEvent;
@@ -9,6 +10,8 @@ import javafx.geometry.Insets;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
+
+import javax.naming.LimitExceededException;
 
 public class ItemController {
     @FXML
@@ -30,7 +33,7 @@ public class ItemController {
     }
 
     @FXML
-    void btnAddToCartClicked(ActionEvent event) {
+    void btnAddToCartClicked(ActionEvent event) throws LimitExceededException {
         Button btnClicked = (Button) event.getSource();
         if (btnClicked.getId().equals("btnAddToCart")) {
             cart.addMedia(media);
@@ -38,7 +41,7 @@ public class ItemController {
     }
 
     @FXML
-    void btnPlayClicked(ActionEvent event) {
+    void btnPlayClicked(ActionEvent event) throws PlayerException {
         Button btnClicked = (Button) event.getSource();
         if (btnClicked.getId().equals("btnPlay")) {
             if (media instanceof Playable) {

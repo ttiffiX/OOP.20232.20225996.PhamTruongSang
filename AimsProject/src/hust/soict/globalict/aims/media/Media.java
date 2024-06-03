@@ -63,10 +63,11 @@ public class Media extends java.lang.Object {
     }
 
     public boolean equals(Object o) {
-        if (this == o) {
-            return true;
+        try {
+            return title.equals(((Media) o).title);
+        }catch (NullPointerException | ClassCastException e){
+            return false;
         }
-        return title.equals(((Media) o).title);
     }
 
     public boolean isMatch(String title) {

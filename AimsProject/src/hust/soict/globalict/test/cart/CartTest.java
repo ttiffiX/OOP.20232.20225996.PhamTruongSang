@@ -3,11 +3,12 @@ package AimsProject.src.hust.soict.globalict.test.cart;
 import AimsProject.src.hust.soict.globalict.aims.cart.Cart;
 import AimsProject.src.hust.soict.globalict.aims.media.*;
 
+import javax.naming.LimitExceededException;
 import java.util.ArrayList;
 import java.util.List;
 
 public class CartTest {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws LimitExceededException {
         Cart anOrder = new Cart();
 
         DVD dvd1 = new DVD(1, "The Lion King", "Animation",

@@ -1,6 +1,7 @@
 package AimsProject.src.hust.soict.globalict.aims.screen.customer.controller;
 
 import AimsProject.src.hust.soict.globalict.aims.cart.Cart;
+import AimsProject.src.hust.soict.globalict.aims.exception.PlayerException;
 import AimsProject.src.hust.soict.globalict.aims.media.Media;
 import AimsProject.src.hust.soict.globalict.aims.play.Playable;
 import AimsProject.src.hust.soict.globalict.aims.store.Store;
@@ -83,7 +84,7 @@ public class CartController {
     }
 
     @FXML
-    void btnPlayPressed(ActionEvent event) {
+    void btnPlayPressed(ActionEvent event) throws PlayerException {
         Button clickedButton = (Button) event.getSource();
         if (clickedButton.getId().equals("btnPlay")) {
             if (tblMedia.getSelectionModel().getSelectedItem() instanceof Playable) {
