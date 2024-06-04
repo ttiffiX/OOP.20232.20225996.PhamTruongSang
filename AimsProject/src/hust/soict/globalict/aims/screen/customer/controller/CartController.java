@@ -2,6 +2,8 @@ package AimsProject.src.hust.soict.globalict.aims.screen.customer.controller;
 
 import AimsProject.src.hust.soict.globalict.aims.cart.Cart;
 import AimsProject.src.hust.soict.globalict.aims.exception.PlayerException;
+import AimsProject.src.hust.soict.globalict.aims.media.CD;
+import AimsProject.src.hust.soict.globalict.aims.media.DVD;
 import AimsProject.src.hust.soict.globalict.aims.media.Media;
 import AimsProject.src.hust.soict.globalict.aims.play.Playable;
 import AimsProject.src.hust.soict.globalict.aims.store.Store;
@@ -89,8 +91,26 @@ public class CartController {
     void btnPlayPressed(ActionEvent event) throws PlayerException {
         Button clickedButton = (Button) event.getSource();
         if (clickedButton.getId().equals("btnPlay")) {
+//            if (tblMedia.getSelectionModel().getSelectedItem() instanceof Playable) {
+//                ((Playable) tblMedia.getSelectionModel().getSelectedItem()).play();
             if (tblMedia.getSelectionModel().getSelectedItem() instanceof Playable) {
-                ((Playable) tblMedia.getSelectionModel().getSelectedItem()).play();
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Media Information");
+                alert.setHeaderText(null);
+                if (tblMedia.getSelectionModel().getSelectedItem() instanceof DVD) {
+                    try {
+                        alert.setContentText(((DVD) tblMedia.getSelectionModel().getSelectedItem()).play());
+                    } catch (PlayerException e) {
+                        alert.setContentText(e.getMessage());
+                    }
+                } else if (tblMedia.getSelectionModel().getSelectedItem() instanceof CD) {
+                    try {
+                        alert.setContentText(((CD) tblMedia.getSelectionModel().getSelectedItem()).play());
+                    } catch (PlayerException e) {
+                        alert.setContentText(e.getMessage());
+                    }
+                }
+                alert.showAndWait();
             }
         }
     }

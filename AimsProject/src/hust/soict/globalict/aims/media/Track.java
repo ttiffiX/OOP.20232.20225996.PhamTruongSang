@@ -25,12 +25,16 @@ public class Track implements Playable {
     }
 
     @Override
-    public void play() throws PlayerException {
+    public String play() throws PlayerException {
         if (this.getLength() > 0) {
             System.out.println("Playing Track: " + this.title);
             System.out.println("Track length: " + this.length);
+
+            return "\nPlaying Track: " + this.title + "\nTrack length: " + this.length;
         } else {
+            System.err.println("ERROR: Track length is non-positive.");
             throw new PlayerException("ERROR: Track length is non-positive");
+//            return "\nTrack: " + this.title + ", ERROR: Track length is non-positive";
         }
     }
 

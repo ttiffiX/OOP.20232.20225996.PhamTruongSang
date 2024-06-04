@@ -2,11 +2,14 @@ package AimsProject.src.hust.soict.globalict.aims.screen.customer.controller;
 
 import AimsProject.src.hust.soict.globalict.aims.cart.Cart;
 import AimsProject.src.hust.soict.globalict.aims.exception.PlayerException;
+import AimsProject.src.hust.soict.globalict.aims.media.CD;
+import AimsProject.src.hust.soict.globalict.aims.media.DVD;
 import AimsProject.src.hust.soict.globalict.aims.media.Media;
 import AimsProject.src.hust.soict.globalict.aims.play.Playable;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.geometry.Insets;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
@@ -36,7 +39,12 @@ public class ItemController {
     void btnAddToCartClicked(ActionEvent event) throws LimitExceededException {
         Button btnClicked = (Button) event.getSource();
         if (btnClicked.getId().equals("btnAddToCart")) {
-            cart.addMedia(media);
+//            cart.addMedia(media);
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Information");
+            alert.setHeaderText(null);
+            alert.setContentText(cart.addMedia(media));
+            alert.showAndWait();
         }
     }
 
@@ -45,8 +53,25 @@ public class ItemController {
         Button btnClicked = (Button) event.getSource();
         if (btnClicked.getId().equals("btnPlay")) {
             if (media instanceof Playable) {
-                ((Playable) media).play();
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setHeaderText(null);
+                alert.setTitle("Media Information");
+                if (media instanceof DVD) {
+                    try {
+                        alert.setContentText(((DVD) media).play());
+                    } catch (PlayerException e) {
+                        alert.setContentText(e.getMessage());
+                    }
+                } else if (media instanceof CD) {
+                    try {
+                        alert.setContentText(((CD) media).play());
+                    } catch (PlayerException e) {
+                        alert.setContentText(e.getMessage());
+                    }
+                }
+                alert.showAndWait();
             }
+
         }
     }
 
