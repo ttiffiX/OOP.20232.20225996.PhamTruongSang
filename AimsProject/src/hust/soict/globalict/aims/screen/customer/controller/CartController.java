@@ -20,8 +20,8 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class CartController {
-    private  Cart cart;
-    private  Store store;
+    private Cart cart;
+    private Store store;
 
     @FXML
     private Button btnPlay;
@@ -62,8 +62,10 @@ public class CartController {
         if (cart.getItemsOrdered() != null) {
             tblMedia.setItems(cart.getItemsOrdered());
         }
+
         btnPlay.setVisible(false);
         btnRemove.setVisible(false);
+        updateTotalCost();
 
         tblMedia.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Media>() {
             @Override
@@ -97,6 +99,7 @@ public class CartController {
     void btnRemovePressed(ActionEvent event) {
         Media media = tblMedia.getSelectionModel().getSelectedItem();
         cart.removeMedia(media);
+        updateTotalCost();
     }
 
     @FXML
@@ -115,9 +118,24 @@ public class CartController {
         }
     }
 
+    private void updateTotalCost() {
+        float totalCost = 0;
+        for (Media media : cart.getItemsOrdered()) {
+            totalCost += media.getCost();
+        }
+        costLabel.setText(totalCost + " $");
+    }
+
     @FXML
     void btnPlaceOrderClicked(ActionEvent event) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Place Order");
+        alert.setHeaderText(null);
+        alert.setContentText("Place Order succesfully!");
+        alert.showAndWait();
 
+        cart.clear();
+        updateTotalCost();
     }
 
 

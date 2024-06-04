@@ -94,4 +94,8 @@ public class Cart {
         return itemsOrdered.size();
     }
 
+    public void clear() {
+        itemsOrdered.clear();
+    }
+
 }
