@@ -12,7 +12,7 @@ import java.util.Collections;
 import java.util.List;
 
 public class Cart {
-    public static int MAX_NUMBERS_ORDERED = 20;
+    public static int MAX_NUMBERS_ORDERED = 4;
     //    private ArrayList<Media> itemsOrdered = new ArrayList<Media>();
     private final ObservableList<Media> itemsOrdered = FXCollections.observableArrayList();
 
@@ -20,15 +20,19 @@ public class Cart {
         return itemsOrdered;
     }
 
-    public void addMedia(Media media) throws LimitExceededException {
+    public String addMedia(Media media) throws LimitExceededException {
         if (itemsOrdered.size() >= MAX_NUMBERS_ORDERED) {
-//            System.out.println("The Cart is already full.");
+            System.out.println("The Cart is already full.");
 //            return;
-            throw  new LimitExceededException("ERROR: The number of media has reached its limit");
+            throw new LimitExceededException("ERROR: The number of media has reached its limit");
         }
         if (!itemsOrdered.contains(media)) {
             itemsOrdered.add(media);
-        } else System.out.println("The media is already exist.");
+            return "Add Media successfully!";
+        } else {
+            System.out.println("The media is already exist.");
+            return "The media is already exist.";
+        }
     }
 
     public void removeMedia(Media media) {

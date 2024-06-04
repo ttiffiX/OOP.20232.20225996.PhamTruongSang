@@ -13,16 +13,19 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+import javax.naming.LimitExceededException;
 import java.util.ArrayList;
 
 public class TestViewStoreScreen extends Application {
     private static Store store;
 
+    private static Cart cart;
+
     @Override
     public void start(Stage primaryStage) throws Exception {
         final String STORE_FXML_FILE_PATH = "/AimsProject/src/hust/soict/globalict/aims/screen/customer/view/Store.fxml";
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(STORE_FXML_FILE_PATH));
-        ViewStoreController viewStoreController = new ViewStoreController(store);
+        ViewStoreController viewStoreController = new ViewStoreController(store,cart);
         fxmlLoader.setController(viewStoreController);
         Parent root = fxmlLoader.load();
 
@@ -31,11 +34,13 @@ public class TestViewStoreScreen extends Application {
         primaryStage.show();
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws LimitExceededException {
         store = new Store();
+        cart = new Cart();
         DVD dvd1 = new DVD(1, "The Lion King", "Animation", "Roger Allers", 87, 19.95f);
         DVD dvd2 = new DVD(2, "Star Wars", "Science Fiction", "George Lucas", 87, 24.95f);
         DVD dvd3 = new DVD(3, "Aladin", "Animation", 18.99f);
+        DVD dvd4 = new DVD(6, "Hello", "Animation", 18.99f);
         ArrayList<String> authors = new ArrayList<>();
         authors.add("HMD");
         Book book1 = new Book(4, "Sherlock Holmes", "Detective", 100.0f, authors);
@@ -49,6 +54,10 @@ public class TestViewStoreScreen extends Application {
         store.addMedia(dvd3);
         store.addMedia(book1);
         store.addMedia(cd1);
+        store.addMedia(dvd4);
+
+        cart.addMedia(dvd1);
+        cart.addMedia(dvd2);
         launch(args);
     }
 }

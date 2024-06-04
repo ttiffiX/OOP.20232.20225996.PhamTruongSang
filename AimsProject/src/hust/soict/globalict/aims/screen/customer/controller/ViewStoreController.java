@@ -36,7 +36,7 @@ public class ViewStoreController {
         try {
             final String CART_FXML_FILE_PATH = "/AimsProject/src/hust/soict/globalict/aims/screen/customer/view/Cart.fxml";
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(CART_FXML_FILE_PATH));
-//            fxmlLoader.setController(new CartController(store, cart));
+            fxmlLoader.setController(new CartController(store, cart));
             Parent root = fxmlLoader.load();
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             stage.setScene(new Scene(root));

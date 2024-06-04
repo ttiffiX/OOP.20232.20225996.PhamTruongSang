@@ -58,22 +58,22 @@ public class CD extends Disc implements Playable {
 
 
     @Override
-    public void play() throws PlayerException {
-//        if (tracks.isEmpty()) {
-//            System.out.println("This track can't be played.");
-//        } else {
-//            for (Track track : tracks) {
-//                track.play();
-//            }
-//        }
+    public String play() throws PlayerException {
         if (this.getLength() > 0) {
             java.util.Iterator iterator = tracks.iterator();
             Track nextTrack;
+                String result = "";
             while (iterator.hasNext()) {
                 nextTrack = (Track) iterator.next();
-                nextTrack.play();
+                result += nextTrack.play();
+
             }
-        } else throw new PlayerException("ERROR: CD length is non-positive");
+            return "Now Playing: " + this.getTitle() + result;
+        } else {
+            System.err.println("ERROR: CD length is non-positive.");
+            throw new PlayerException("ERROR: CD length is non-positive");
+
+        }
     }
 
     public String toString() {

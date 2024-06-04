@@ -6,7 +6,7 @@
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
 
-<VBox alignment="CENTER" prefHeight="768.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AimsProject.src.hust.soict.globalict.aims.screen.customer.controller.ViewStoreController">
+<VBox alignment="CENTER" prefHeight="768.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
     <children>
         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
             <children>
@@ -53,6 +53,6 @@
         </ScrollPane>
     </children>
     <padding>
-        <Insets left="20.0" right="20.0" />
+        <Insets left="20.0" />
     </padding>
 </VBox>
