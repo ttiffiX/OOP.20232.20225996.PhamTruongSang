@@ -34,7 +34,7 @@ public class TestViewStoreScreen extends Application {
         primaryStage.show();
     }
 
-    public static void main(String[] args) throws LimitExceededException {
+    public static void main(String[] args) throws Exception {
         store = new Store();
         cart = new Cart();
         DVD dvd1 = new DVD(1, "The Lion King", "Animation", "Roger Allers", 87, 19.95f);

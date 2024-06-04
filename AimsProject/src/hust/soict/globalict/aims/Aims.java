@@ -97,7 +97,7 @@ public class Aims {
         System.out.print("Please choose a number: 0-1-2-3-4-5: ");
     }
 
-    public static void main(String[] args) throws LimitExceededException, PlayerException {
+    public static void main(String[] args) throws Exception {
         Store store = new Store();
         Cart cart = new Cart();
         Random random = new Random();

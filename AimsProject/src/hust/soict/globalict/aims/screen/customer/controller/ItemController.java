@@ -36,14 +36,18 @@ public class ItemController {
     }
 
     @FXML
-    void btnAddToCartClicked(ActionEvent event) throws LimitExceededException {
+    void btnAddToCartClicked(ActionEvent event) throws Exception {
         Button btnClicked = (Button) event.getSource();
         if (btnClicked.getId().equals("btnAddToCart")) {
 //            cart.addMedia(media);
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Information");
             alert.setHeaderText(null);
+            try{
             alert.setContentText(cart.addMedia(media));
+        }catch (Exception e){
+                alert.setContentText(e.getMessage());
+            }
             alert.showAndWait();
         }
     }
