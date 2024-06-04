@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CartTest {
-    public static void main(String[] args) throws LimitExceededException {
+    public static void main(String[] args) throws Exception {
         Cart anOrder = new Cart();
 
         DVD dvd1 = new DVD(1, "The Lion King", "Animation",
